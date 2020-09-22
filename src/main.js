@@ -6,7 +6,7 @@ import getApp from './apps'
 const appsQty = 4
 
 const pushAndRun = num => {
-    window.history.pushState({ num }, num, num)
+    window.history.pushState({ num }, num, `#${num}`)
     getApp(num)()
 }
 
@@ -34,7 +34,7 @@ window.addEventListener('popstate', e => getApp(e.state.num)())
 
 // initial url
 
-const urlFragment = window.location.pathname.replace('/', '')
+const urlFragment = window.location.hash.replace('#', '')
 let initialAppNum = +urlFragment | 0
 
 if (!(!isNaN(initialAppNum) && urlFragment === initialAppNum + '' && initialAppNum >= 1 && initialAppNum <= appsQty)) {
