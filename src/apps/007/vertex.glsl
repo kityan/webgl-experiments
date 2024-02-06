@@ -10,7 +10,7 @@ void main() {
 
   vec4 transformedPosition = u_transform * vec4(a_position.xy, 0.0, 1.0);
 
-  float zToDivideBy = 1.0 + transformedPosition.z * 0.25;
+  float zToDivideBy = 1.0 + transformedPosition.z * 1.0;
 
   gl_Position = vec4(transformedPosition.xy / zToDivideBy, transformedPosition.zw);
 
