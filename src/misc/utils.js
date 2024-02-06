@@ -54,11 +54,15 @@ export function prepareCanvas(message, clickCallback) {
 
 
 
-    if (message) {
+    if (message && typeof message === "string") {
         const div = document.createElement('div')
         div.classList.add(classes.message)
         div.innerHTML = message
         document.querySelector('body').appendChild(div)
+    }
+    if (message && typeof message === "object") {
+        message.classList.add(classes.message)
+        document.querySelector('body').appendChild(message)
     }
 
     return gl

@@ -3,7 +3,7 @@ import './misc/webgl-utils.js?global'
 import getApp from './apps'
 
 
-const appsQty = 4
+const appsQty = 7
 
 const pushAndRun = num => {
     window.history.pushState({ num }, num, `#${num}`)
